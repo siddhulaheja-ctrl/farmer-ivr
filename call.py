@@ -18,11 +18,11 @@ message = (
     f"Your procurement slot is booked for {farmer['slot_date']} "
     f"at {farmer['centre']} centre. Thank you."
 )
-
 response = client.voice.create_call(CreateCallRequest(
-        to=[ToPhone(number=farmer["phone"])],
+    to=[ToPhone(number=farmer["phone"])],
     from_=Phone(number="12345678901"),
-    ncco=[Talk(text=message)]
+    answer_url=["https://farmer-ivr-jky0.onrender.com/answer"]
+
 ))
 
 print(response)

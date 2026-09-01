@@ -27,6 +27,7 @@ def answer():
 @app.route("/keypress", methods=["POST"])
 def keypress():
     data = request.get_json()
+    print("RECEIVED:",data)
     digit = data.get("dtmf", {}).get("digits")
 
     if digit == "1":
