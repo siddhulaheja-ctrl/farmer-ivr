@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-BASE_URL = "https://farmer-ivr.onrender.com"   # your Render URL, no trailing slash
+BASE_URL = "https://farmer-ivr-jky0.onrender.com"   # your Render URL, no trailing slash
 
 @app.route("/")
 def home():
@@ -20,7 +20,7 @@ def answer():
             "action": "input",
             "type": ["dtmf"],
             "dtmf": {"maxDigits": 1},
-            "eventUrl": [f"https://farmer-ivr-jky0.onrender.com/keypress"]
+            "eventUrl": [f"{BASE_URL}/keypress"]
         }
     ])
 
